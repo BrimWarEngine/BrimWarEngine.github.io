@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>⟁ WAR ENGINE // MAX DRIVE</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ffee;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      font-size: 3rem;
+    }
+    #tickDisplay {
+      animation: pulse 1s infinite alternate;
+    }
+    @keyframes pulse {
+      from { text-shadow: 0 0 10px #ff00ff; }
+      to { text-shadow: 0 0 30px #ff00ff; }
+    }
+  </style>
+</head>
+<body>
+  <div id="tickDisplay">TICK 0</div>
+
+  <script>
+    let tick = 0;
+    const display = document.getElementById("tickDisplay");
+    function loop() {
+      for (let i = 0; i < 50; i++) {
+        tick++;
+        display.innerText = "TICK " + tick;
+      }
+    }
+    setInterval(loop, 10); // 5000 ticks/sec
+  </script>
+</body>
+</html>

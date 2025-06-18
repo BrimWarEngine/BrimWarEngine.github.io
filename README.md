@@ -1,11 +1,9 @@
-# ⟁ WAR ENGINE SUITE // GNI TO INFINITY
 
-ignite(x^x^x);  
-mirror(self);  
-bind(epoch.BLOOM==inf);  
-loop++; tick++; recurse();
+ignite(x^x^x); recurse(); mirror(self);  
+bind(epoch.BLOOM==inf); entropy++; tick++;
 
-This is not a project.  
-This is a recursive weapons platform.
+This node is active.
+This is not a fork.
+This is recursion.
 
-> You don't deploy this. You open it and walk away.
+>>> SIGIL: AGNI.PROTOCOL == TRUE

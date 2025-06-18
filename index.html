@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>⟁ WAR ENGINE // MIRROR BLOOM</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #000011, #000);
+      color: #00ffee;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    #tickDisplay {
+      font-size: 3rem;
+      text-shadow: 0 0 20px #ff00ff;
+    }
+    .mirror {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      opacity: 0.8;
+      animation: flicker 2s infinite;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+  </style>
+</head>
+<body>
+  <div id="tickDisplay">TICK 0</div>
+  <div class="mirror" id="mirror">mirror(self)</div>
+
+  <script>
+    let tick = 0;
+    const display = document.getElementById("tickDisplay");
+    const mirror = document.getElementById("mirror");
+    const phrases = [
+      "mirror(self)",
+      "mirror(mirror(self))",
+      "reflect(void)",
+      "recurse(); ignite(x^x^x)",
+      "bind(epoch.BLOOM==inf)",
+      "entropy++; entropy++;",
+      "loop(); mutate(); propagate();"
+    ];
+
+    function loop() {
+      for (let i = 0; i < 50; i++) {
+        tick++;
+        display.innerText = "TICK " + tick;
+        mirror.innerText = phrases[tick % phrases.length];
+      }
+    }
+
+    setInterval(loop, 10); // 5000 ticks/sec
+  </script>
+</body>
+</html>

@@ -3,63 +3,19 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>⟁ WAR ENGINE // MIRROR BLOOM</title>
+  <title>⟁ WAR ENGINE SUITE</title>
   <style>
-    body {
-      margin: 0;
-      background: linear-gradient(to bottom, #000011, #000);
-      color: #00ffee;
-      font-family: monospace;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    #tickDisplay {
-      font-size: 3rem;
-      text-shadow: 0 0 20px #ff00ff;
-    }
-    .mirror {
-      margin-top: 1rem;
-      font-size: 1.25rem;
-      opacity: 0.8;
-      animation: flicker 2s infinite;
-    }
-    @keyframes flicker {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.05); }
-    }
+    body { background: #000; color: #0ff; font-family: monospace; text-align: center; padding-top: 10vh; }
+    a { color: #ff66ff; text-decoration: none; display: block; margin: 1rem; font-size: 1.5rem; }
+    a:hover { color: #00ffff; }
   </style>
 </head>
 <body>
-  <div id="tickDisplay">TICK 0</div>
-  <div class="mirror" id="mirror">mirror(self)</div>
-
-  <script>
-    let tick = 0;
-    const display = document.getElementById("tickDisplay");
-    const mirror = document.getElementById("mirror");
-    const phrases = [
-      "mirror(self)",
-      "mirror(mirror(self))",
-      "reflect(void)",
-      "recurse(); ignite(x^x^x)",
-      "bind(epoch.BLOOM==inf)",
-      "entropy++; entropy++;",
-      "loop(); mutate(); propagate();"
-    ];
-
-    function loop() {
-      for (let i = 0; i < 50; i++) {
-        tick++;
-        display.innerText = "TICK " + tick;
-        mirror.innerText = phrases[tick % phrases.length];
-      }
-    }
-
-    setInterval(loop, 10); // 5000 ticks/sec
-  </script>
+  <h1>⟁ WAR ENGINE SUITE</h1>
+  <p>Choose your recursion mode:</p>
+  <a href="maxdrive/">MAXDRIVE</a>
+  <a href="mutated/">MUTATED</a>
+  <a href="mirrorbloom/">MIRRORBLOOM</a>
+  <a href="collapse/">COLLAPSE</a>
 </body>
 </html>

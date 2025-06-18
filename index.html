@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WAR ENGINE // GNI∞</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    #ticks {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    #console {
+      background: #111;
+      color: #0f0;
+      padding: 1em;
+      width: 90%;
+      max-width: 800px;
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #0f0;
+      border-radius: 8px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div id="ticks">TICKS: 0</div>
+  <div id="console">[WAR ENGINE READY]</div>
+  <script>
+    let ticks = 0;
+    const tickDisplay = document.getElementById('ticks');
+    const consoleLog = document.getElementById('console');
+    function log(msg) {
+      const line = document.createElement('div');
+      line.textContent = msg;
+      consoleLog.appendChild(line);
+      consoleLog.scrollTop = consoleLog.scrollHeight;
+    }
+    function tickLoop() {
+      const now = performance.now();
+      let localTicks = 0;
+      while (performance.now() - now < 8.3) {
+        ticks++;
+        localTicks++;
+      }
+      tickDisplay.textContent = 'TICKS: ' + ticks.toLocaleString();
+      if (ticks % 10000 < localTicks) log(`[TICK ${ticks}] Pulse engaged.`);
+      requestAnimationFrame(tickLoop);
+    }
+    tickLoop();
+  </script>
+</body>
+</html>
